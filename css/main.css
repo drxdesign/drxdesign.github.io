@@ -1,50 +1,14 @@
 /* RGB */
 body {
-  background-image: url("../img/background.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: #e9ece5;
+  color: #868B92;
   margin: 0;
   padding: 0;
   font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
 }
-
-main {
-  margin-top: 50vh;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-img {
-  -ms-flex-line-pack: center;
-      align-content: center;
-  padding-bottom: 25px;
-}
-
-h1 {
-  font-family: 'Comfortaa', cursive;
-}
-
-#location {
-  padding: 10px;
-}
-
 a {
-  text-decoration: none;
-  text-align: center;
-  vertical-align: center;
+  color: #A6CE28;
 }
-
-i {
-  padding: 14px;
-  background: #333333;
-  color: #7baf05;
-  height: 48px;
-  width: 48px;
-  text-align: center;
-  vertical-align: center;
-  text-decoration: none;
-  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+main{
+ padding-top: 40vh;
 }
-/*# sourceMappingURL=main.css.map */
