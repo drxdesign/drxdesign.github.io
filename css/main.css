@@ -1,13 +1,13 @@
 /* RGB */
 body {
-  color: #868B92;
+  color: #212121;
   margin: 0;
   padding: 0;
   font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
 }
 a {
-  color: #A6CE28;
+  color: #85ad00;
 }
 main{
  padding-top: 40vh;
