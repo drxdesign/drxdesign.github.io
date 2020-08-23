@@ -5,9 +5,10 @@ body {
   padding: 0;
   font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
+  background-color: aliceblue;
 }
 a {
-  color: #85ad00;
+  color:blueviolet;
 }
 main{
  padding-top: 40vh;
