@@ -11,6 +11,7 @@
         body {
             background-color: #1a202c;
             color: #cbd5e0;
+            transition: background-color 0.3s ease-in-out;
         }
 
         /* Custom Countdown style */
@@ -19,20 +20,37 @@
         }
 
         .countdown span {
-            color: #a3e635; /* Guardian green */
+            color: #a3e635;
             transition: color 0.3s ease;
         }
 
         .countdown span.yellow {
-            color: #f6e05e; /* Guardian yellow */
+            color: #f6e05e;
+        }
+
+        /* Flicker Effect */
+        .flicker {
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.1);
+            }
+            75% {
+                filter: brightness(0.95);
+            }
         }
     </style>
 </head>
 
-<body class="flex items-center justify-center h-screen">
-    <div class="text-center">
-        <h1 class="text-4xl mb-4">Under Construction</h1>
-        <p class="text-lg mb-8">We are working on something awesome!</p>
+<body class="flex items-center justify-center h-screen flicker">
+    <div class="text-center px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl mb-4">Under Construction</h1>
+        <p class="text-lg sm:text-xl lg:text-2xl mb-8">We are working on something awesome!</p>
         <div id="countdown" class="countdown mb-4">
             <span id="days" class="text-guardian">00</span> :
             <span id="hours" class="text-guardian">00</span> :
@@ -45,7 +63,7 @@
         // Set the date we're counting down to (replace with your end date)
         var countDownDate = new Date("Oct 31, 2024 15:37:25").getTime();
 
-        var countdown = setInterval(function() {
+        var countdown = setInterval(function () {
             // Get today's date and time
             var now = new Date().getTime();
 
@@ -64,12 +82,28 @@
             document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
             document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
 
+            // Change colors as the time gets closer
+            if (distance < 86400000) { // Less than 24 hours
+                document.querySelectorAll('.countdown span').forEach(span => span.classList.add('yellow'));
+            }
+
             // If the count down is finished, write some text
             if (distance < 0) {
                 clearInterval(countdown);
                 document.getElementById("countdown").innerHTML = "<span class='text-xl'>Under construction!</span>";
             }
         }, 1000);
+
+        // Flickering background effect with subtle brightness variation
+        function flickerEffect() {
+            const body = document.body;
+            setInterval(() => {
+                let flicker = Math.random() * 0.2 + 0.9; // Random brightness between 0.9 and 1.1
+                body.style.filter = `brightness(${flicker})`;
+            }, 2000);
+        }
+
+        flickerEffect();
     </script>
 </body>
 
