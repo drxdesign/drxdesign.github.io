@@ -1,48 +1,63 @@
-# Astro Starter Kit: Basics
+# DRX Design
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to the official repository of DRX Design!
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## About
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+DRX Design is a creative design agency specializing in web development, graphic design, and digital marketing. Our mission is to deliver innovative and effective solutions to help businesses grow and succeed in the digital world.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Services
 
-## 🚀 Project Structure
+- **Web Development**: Custom websites, e-commerce solutions, and web applications.
+- **Graphic Design**: Branding, logos, brochures, and marketing materials.
+- **Digital Marketing**: SEO, social media management, and online advertising.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Getting Started
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+To get started with our projects, follow these steps:
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/drxdesign/drxdesign.github.io.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd drxdesign.github.io
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+4. Run the development server:
+    ```bash
+    npm start
+    ```
 
-## 🧞 Commands
+## Contributing
 
-All commands are run from the root of the project, from a terminal:
+We welcome contributions from the community. To contribute, please follow these steps:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. Fork the repository.
+2. Create a new branch:
+    ```bash
+    git checkout -b feature-branch
+    ```
+3. Make your changes and commit them:
+    ```bash
+    git commit -m "Description of your changes"
+    ```
+4. Push to the branch:
+    ```bash
+    git push origin feature-branch
+    ```
+5. Create a pull request.
 
-## 👀 Want to learn more?
+## License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For any inquiries, please contact us at [drx-design@hotmail.com](mailto:drx-design@hotmail.com).
+
+Thank you for visiting our repository!
