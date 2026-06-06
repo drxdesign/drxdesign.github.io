@@ -3,7 +3,8 @@
 A modern, animated personal portfolio built with **Astro.js** + **Tailwind CSS**.
 
 ## ✨ Features
-- Pixel-perfect recreation of the KIWI design
+
+- Pixel-perfect recreation of the drxdesign portfolio design
 - Typing animation in the hero section
 - Scroll-reveal animations on all sections
 - Animated skill progress bars
@@ -16,6 +17,7 @@ A modern, animated personal portfolio built with **Astro.js** + **Tailwind CSS**
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js **v18+**
 - npm or pnpm
 
@@ -67,22 +69,24 @@ kiwi-portfolio/
 
 ## 🎨 Customisation
 
-| What                   | Where                                              |
-|------------------------|----------------------------------------------------|
-| Your name / tagline    | `src/components/Hero.astro`                        |
-| Profile photo          | Replace the SVG in `Hero.astro` with an `<img>`    |
-| Skills & percentages   | `src/components/About.astro` — `skills` array      |
-| Projects               | `src/components/Work.astro` — `projects` array     |
-| Social links           | `src/components/SocialLinks.astro` — `links` array |
-| Contact info           | `src/components/Contact.astro` — `contactInfo`     |
-| Brand colour           | `tailwind.config.mjs` → `accent: '#9FE45A'`        |
+| What                 | Where                                              |
+| -------------------- | -------------------------------------------------- |
+| Your name / tagline  | `src/components/Hero.astro`                        |
+| Profile photo        | Replace the SVG in `Hero.astro` with an `<img>`    |
+| Skills & percentages | `src/components/About.astro` — `skills` array      |
+| Projects             | `src/components/Work.astro` — `projects` array     |
+| Social links         | `src/components/SocialLinks.astro` — `links` array |
+| Contact info         | `src/components/Contact.astro` — `contactInfo`     |
+| Brand colour         | `tailwind.config.mjs` → `accent: '#9FE45A'`        |
 
 ## 📬 Contact Form
 
 The form currently **simulates** a send. To wire it up for real, replace the `setTimeout` mock in `Contact.astro` with a `fetch` call to any of:
+
 - [Formspree](https://formspree.io) (free tier available)
 - [EmailJS](https://emailjs.com)
 - Your own API route (`src/pages/api/contact.ts`)
 
 ## 📄 License
+
 MIT — use it however you like.
