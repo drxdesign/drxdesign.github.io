@@ -1,0 +1,160 @@
+---
+const projects = [
+  {
+    title: 'Dashboard UI',
+    desc: 'A clean and modern dashboard design for analytics platform.',
+    tags: ['UI/UX', 'Figma'],
+    href: '#',
+    mockup: 'dashboard',
+  },
+  {
+    title: 'Digital Agency Website',
+    desc: 'Responsive website for a digital agency built with Astro.js.',
+    tags: ['Astro.js', 'Tailwind CSS'],
+    href: '#',
+    mockup: 'agency',
+  },
+  {
+    title: 'E-commerce Store',
+    desc: 'Minimal e-commerce store with smooth shopping experience.',
+    tags: ['Astro.js', 'Tailwind CSS'],
+    href: '#',
+    mockup: 'ecommerce',
+  },
+];
+---
+
+<section id="work" class="py-20 px-6 md:px-16">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <p class="reveal section-label mb-2">My Work</p>
+      <h2 class="reveal delay-100 text-3xl md:text-4xl font-bold">Some of my recent work</h2>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+      {projects.map(({ title, desc, tags, href, mockup }, i) => (
+        <a
+          href={href}
+          class={`project-card reveal delay-${(i + 1) * 100}`}
+          aria-label={`View ${title}`}
+        >
+          <!-- Mockup preview -->
+          <div class="relative h-48 overflow-hidden">
+            {mockup === 'dashboard' && (
+              <div class="absolute inset-0 bg-[#181818] p-3 flex flex-col gap-2">
+                <!-- browser chrome -->
+                <div class="flex gap-1.5 items-center mb-1">
+                  <div class="w-2 h-2 rounded-full bg-red-400/60"></div>
+                  <div class="w-2 h-2 rounded-full bg-yellow-400/60"></div>
+                  <div class="w-2 h-2 rounded-full bg-green-400/60"></div>
+                  <div class="flex-1 bg-white/10 rounded h-2.5 ml-2"></div>
+                </div>
+                <!-- layout -->
+                <div class="flex gap-2 flex-1">
+                  <div class="w-16 bg-white/5 rounded-lg flex flex-col gap-1.5 p-1.5">
+                    <div class="h-2 bg-accent/40 rounded w-3/4"></div>
+                    <div class="h-1.5 bg-white/10 rounded"></div>
+                    <div class="h-1.5 bg-white/10 rounded w-2/3"></div>
+                    <div class="h-1.5 bg-accent/30 rounded mt-2"></div>
+                    <div class="h-1.5 bg-white/10 rounded"></div>
+                    <div class="h-1.5 bg-white/10 rounded w-1/2"></div>
+                  </div>
+                  <div class="flex-1 flex flex-col gap-1.5">
+                    <div class="grid grid-cols-2 gap-1.5 h-14">
+                      <div class="bg-accent/20 rounded-lg p-1 flex items-center justify-center">
+                        <div class="w-6 h-6 rounded-full border-2 border-accent/70"></div>
+                      </div>
+                      <div class="bg-white/5 rounded-lg"></div>
+                    </div>
+                    <div class="flex-1 bg-white/5 rounded-lg p-1.5 flex items-end gap-1">
+                      {[40,70,55,85,50,65].map(h => (
+                        <div
+                          class="flex-1 bg-accent/60 rounded-sm"
+                          style={`height:${h}%`}
+                        ></div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {mockup === 'agency' && (
+              <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                <div class="text-center px-6">
+                  <div class="text-accent font-mono text-xs mb-2 font-bold tracking-widest">&lt; KIWI /&gt;</div>
+                  <div class="text-white font-bold text-sm leading-tight">
+                    Grow your business<br/>with digital solutions
+                  </div>
+                  <div class="mt-4 mx-auto w-20 h-6 bg-accent rounded-lg flex items-center justify-center">
+                    <span class="text-dark text-[10px] font-bold">Get Started</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {mockup === 'ecommerce' && (
+              <div class="absolute inset-0 bg-gray-50 p-3">
+                <div class="bg-white rounded-lg h-full p-3 shadow-sm flex gap-3">
+                  <div class="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-2">
+                    <!-- Chair SVG -->
+                    <svg viewBox="0 0 60 60" class="w-14 h-14" fill="none">
+                      <rect x="18" y="8" width="24" height="18" rx="3" fill="#333"/>
+                      <rect x="20" y="26" width="20" height="10" rx="2" fill="#555"/>
+                      <rect x="19" y="36" width="4" height="14" rx="1" fill="#444"/>
+                      <rect x="37" y="36" width="4" height="14" rx="1" fill="#444"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="text-[9px] text-gray-400 font-medium">Name</div>
+                    <div class="text-[12px] text-gray-800 font-bold mt-0.5">Modern Chair</div>
+                    <div class="text-[10px] text-gray-500 mt-0.5">$129.00</div>
+                    <div class="h-1.5 bg-gray-200 rounded mt-2"></div>
+                    <div class="h-1.5 bg-gray-200 rounded mt-1 w-3/4"></div>
+                    <div class="mt-3 w-full h-6 bg-gray-900 rounded flex items-center justify-center">
+                      <span class="text-white text-[9px] font-semibold">Add to cart</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <!-- overlay fade -->
+            <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-80"></div>
+          </div>
+
+          <!-- Card body -->
+          <div class="p-5">
+            <h3 class="text-white font-semibold text-base mb-1.5">{title}</h3>
+            <p class="text-gray-500 text-xs mb-4 leading-relaxed">{desc}</p>
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2 flex-wrap">
+                {tags.map(tag => (
+                  <span class="tag-chip">{tag}</span>
+                ))}
+              </div>
+              <span class="card-arrow" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- View all CTA -->
+    <div class="reveal text-center mt-12">
+      <a href="#" class="btn-outline inline-flex items-center gap-2 px-8 py-3.5 text-sm">
+        View All Projects
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

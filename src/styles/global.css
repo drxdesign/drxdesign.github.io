@@ -1,0 +1,211 @@
+/* ============================================================
+   DRXDESIGN Portfolio — Global Styles
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Base -------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply bg-dark text-white;
+  }
+
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply antialiased;
+  }
+
+  ::-webkit-scrollbar        { width: 4px; }
+  ::-webkit-scrollbar-track  { @apply bg-dark; }
+  ::-webkit-scrollbar-thumb  { @apply bg-accent rounded-full; }
+}
+
+/* ---- Utilities ---------------------------------------------- */
+@layer utilities {
+  .dots-bg {
+    background-image: radial-gradient(circle, #252525 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.15em] uppercase text-accent;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #9FE45A 0%, #6db83a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* ---- Components -------------------------------------------- */
+@layer components {
+
+  /* Navbar */
+  .navbar-scrolled {
+    background: rgba(17, 17, 17, 0.92) !important;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 1px 0 #252525;
+  }
+
+  .nav-link {
+    @apply relative text-gray-400 font-medium transition-colors duration-200 hover:text-accent;
+  }
+  .nav-link.active {
+    @apply text-white;
+  }
+  .nav-link.active::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 right-0 h-0.5 bg-accent rounded-full;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-accent text-dark font-semibold rounded-xl transition-all duration-200
+           hover:bg-accent-light hover:-translate-y-0.5;
+    box-shadow: 0 0 0 rgba(159, 228, 90, 0);
+    transition: background 0.22s, transform 0.18s, box-shadow 0.22s;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 8px 28px rgba(159, 228, 90, 0.30);
+  }
+
+  .btn-outline {
+    @apply border border-border text-white font-semibold rounded-xl transition-all duration-200
+           hover:border-accent hover:text-accent hover:-translate-y-0.5;
+  }
+
+  /* Social icons */
+  .social-icon {
+    @apply w-9 h-9 flex items-center justify-center rounded-lg border border-border
+           text-gray-500 transition-all duration-200
+           hover:border-accent hover:text-accent hover:bg-accent/10 hover:-translate-y-0.5;
+  }
+
+  /* Cards */
+  .project-card {
+    @apply bg-card border border-border rounded-2xl overflow-hidden
+           transition-all duration-300 cursor-pointer;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(159, 228, 90, 0.10);
+    border-color: rgba(159, 228, 90, 0.25);
+  }
+  .project-card:hover .card-arrow {
+    @apply bg-accent text-dark border-accent;
+  }
+  .card-arrow {
+    @apply w-8 h-8 rounded-lg border border-border flex items-center justify-center
+           text-gray-500 transition-all duration-200;
+  }
+
+  /* Skill bars */
+  .skill-bar-fill {
+    height: 4px;
+    @apply bg-accent rounded-full;
+    width: 0%;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Tag chips */
+  .tag-chip {
+    @apply bg-dark border border-border text-accent text-[11px] font-medium px-2.5 py-0.5 rounded;
+  }
+
+  /* Form inputs */
+  .form-input {
+    @apply bg-card border border-border rounded-xl text-white placeholder-gray-600
+           px-4 py-3.5 w-full text-sm font-sans outline-none
+           transition-colors duration-200 focus:border-accent;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  /* Logo cursor blink */
+  .logo-cursor {
+    @apply text-accent animate-blink;
+  }
+
+  /* Particle */
+  .particle {
+    @apply absolute rounded-full bg-accent opacity-20 pointer-events-none;
+    animation: particleFloat linear infinite;
+  }
+
+  /* Hero photo */
+  .hero-glow {
+    @apply absolute inset-0 rounded-full animate-pulse-glow;
+    background: radial-gradient(circle, #9FE45A 0%, #5a9e25 65%, transparent 100%);
+  }
+
+  /* Annotation */
+  .annotation {
+    font-family: 'Caveat', cursive;
+    @apply text-accent text-xl select-none pointer-events-none;
+    transform: rotate(-8deg);
+  }
+
+  /* Scroll reveal — initial hidden state */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal-right.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Stagger delays */
+  .delay-100 { transition-delay: 0.10s; }
+  .delay-200 { transition-delay: 0.20s; }
+  .delay-300 { transition-delay: 0.30s; }
+  .delay-400 { transition-delay: 0.40s; }
+  .delay-500 { transition-delay: 0.50s; }
+}
+
+/* ---- Keyframes --------------------------------------------- */
+@keyframes particleFloat {
+  0%   { transform: translateY(0) scale(1);   opacity: 0.2; }
+  50%  { opacity: 0.5; }
+  100% { transform: translateY(-140px) scale(0.4); opacity: 0; }
+}
+
+/* Typing cursor */
+.typing-cursor::after {
+  content: '|';
+  @apply text-accent;
+  animation: blink 0.8s step-end infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Mobile menu open — no scroll */
+body.menu-open {
+  overflow: hidden;
+}

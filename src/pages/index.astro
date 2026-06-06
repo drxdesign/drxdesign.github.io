@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Work from '../components/Work.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main>
+    <Hero />
+    <hr class="border-border" />
+    <About />
+    <hr class="border-border" />
+    <Work />
+    <hr class="border-border" />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<!-- Global scroll-reveal -->
+<script>
+  import '../scripts/scrollReveal.ts';
+</script>

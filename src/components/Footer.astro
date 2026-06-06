@@ -1,0 +1,18 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+---
+
+<footer
+  class="border-t border-border py-6 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-4"
+>
+  <a
+    href="#hero"
+    class="text-white font-bold text-lg tracking-tight select-none"
+  >
+    &lt; DRXDESIGN <span class="logo-cursor">/</span>&gt;
+  </a>
+  <p class="text-gray-500 text-sm">
+    &copy; {new Date().getFullYear()} Kiwi. All rights reserved.
+  </p>
+  <SocialLinks />
+</footer>
