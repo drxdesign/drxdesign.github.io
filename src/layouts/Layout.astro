@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 export interface Props {
   title?: string;
@@ -7,8 +7,8 @@ export interface Props {
 }
 
 const {
-  title = '< DRXDESIGN /> — Web Designer & Developer',
-  description = 'I design and build modern, responsive websites that provide great user experiences and help businesses grow.',
+  title = "< DRXDESIGN /> — Web Designer & Developer",
+  description = "I design and build modern, responsive websites that provide great user experiences and help businesses grow.",
 } = Astro.props;
 ---
 
@@ -19,6 +19,10 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>{title}</title>
 
     <!-- Preconnect for Google Fonts -->
