@@ -41,7 +41,7 @@ npm run preview
 ## 📁 Project Structure
 
 ```
-kiwi-portfolio/
+drxdesign-portfolio/
 ├── public/
 │   ├── favicon.svg
 │   └── cv.pdf           ← add your CV here
@@ -54,6 +54,8 @@ kiwi-portfolio/
 │   │   ├── Contact.astro
 │   │   ├── Footer.astro
 │   │   └── SocialLinks.astro
+│   ├── img/
+│   │   └──profile.png  ← add your image here
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
