@@ -44,7 +44,8 @@ npm run preview
 drxdesign-portfolio/
 ├── public/
 │   ├── favicon.svg
-│   └── cv.pdf           ← add your CV here
+│   ├── cv.pdf          ← add your CV here
+│   └──profile.png      ← add your image here
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.astro
@@ -74,16 +75,17 @@ drxdesign-portfolio/
 | What                 | Where                                              |
 | -------------------- | -------------------------------------------------- |
 | Your name / tagline  | `src/components/Hero.astro`                        |
-| Profile photo        | Replace the SVG in `Hero.astro` with an `<img>`    |
+| Profile photo        | `Replace the image in `Hero.astro` with an `<img>` |
 | Skills & percentages | `src/components/About.astro` — `skills` array      |
 | Projects             | `src/components/Work.astro` — `projects` array     |
 | Social links         | `src/components/SocialLinks.astro` — `links` array |
 | Contact info         | `src/components/Contact.astro` — `contactInfo`     |
 | Brand colour         | `tailwind.config.mjs` → `accent: '#9FE45A'`        |
+| Brand colour         | `tailwind.config.mjs` → `accent: '#9FE45A'`        |
 
 ## 📬 Contact Form
 
-The form currently **simulates** a send. To wire it up for real, replace the `setTimeout` mock in `Contact.astro` with a `fetch` call to any of:
+The form currently a send to my personel . To wire it up for real, replace the `setTimeout` mock in `Contact.astro` with a `fetch` call to any of:
 
 - [Formspree](https://formspree.io) (free tier available)
 - [EmailJS](https://emailjs.com)
