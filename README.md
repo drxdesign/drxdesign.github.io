@@ -45,7 +45,7 @@ drxdesign-portfolio/
 ├── public/
 │   ├── favicon.svg
 │   ├── cv.pdf          ← add your CV here
-│   └──profile.png      ← add your image here
+│   └──profile.jpg      ← add your image here
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.astro
@@ -75,7 +75,7 @@ drxdesign-portfolio/
 | What                 | Where                                              |
 | -------------------- | -------------------------------------------------- |
 | Your name / tagline  | `src/components/Hero.astro`                        |
-| Profile photo        | `Replace the image in `Hero.astro` with an `<img>` |
+| Profile photo        | `Replace the image in `Hero.astro`with an`<img>`   |
 | Skills & percentages | `src/components/About.astro` — `skills` array      |
 | Projects             | `src/components/Work.astro` — `projects` array     |
 | Social links         | `src/components/SocialLinks.astro` — `links` array |
