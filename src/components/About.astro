@@ -1,10 +1,10 @@
 ---
 const skills = [
-  { name: 'HTML / CSS',    pct: 95 },
-  { name: 'JavaScript',    pct: 90 },
-  { name: 'Tailwind CSS',  pct: 95 },
-  { name: 'Astro.js',      pct: 85 },
-  { name: 'UI / UX Design',pct: 90 },
+  { name: 'HTML / CSS',     pct: 95 },
+  { name: 'JavaScript',     pct: 90 },
+  { name: 'Tailwind CSS',   pct: 95 },
+  { name: 'Astro.js',       pct: 85 },
+  { name: 'UI / UX Design', pct: 90 },
 ];
 
 const pillars = [
@@ -26,16 +26,17 @@ const pillars = [
 ];
 ---
 
-<section id="about" class="py-20 px-6 md:px-16">
+<section id="about" aria-labelledby="about-heading" class="py-20 px-6 md:px-16">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-start">
 
     <!-- Left -------------------------------------------------- -->
     <div>
-      <p class="reveal section-label mb-3">About Me</p>
+      <!-- Section label is decorative, the h2 is the real heading -->
+      <p class="reveal section-label mb-3" aria-hidden="true">About Me</p>
 
-      <h2 class="reveal delay-100 text-3xl md:text-4xl font-bold leading-snug mb-5">
-        I'm a passionate developer<br/>
-        who loves <span class="text-accent">clean design</span> and<br/>
+      <h2 id="about-heading" class="reveal delay-100 text-3xl md:text-4xl font-bold leading-snug mb-5">
+        I'm a passionate developer who loves
+        <span class="text-accent">clean design</span> and
         <span class="text-accent">efficient code.</span>
       </h2>
 
@@ -45,43 +46,55 @@ const pillars = [
       </p>
 
       <!-- Pillars -->
-      <div class="reveal delay-300 grid grid-cols-3 gap-5">
+      <ul class="reveal delay-300 grid grid-cols-3 gap-5 list-none p-0" role="list">
         {pillars.map(({ title, desc, icon }) => (
-          <div>
-            <div class="text-accent mb-2">
+          <li>
+            <div class="text-accent mb-2" aria-hidden="true">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                set:html={icon} />
+                aria-hidden="true" focusable="false" set:html={icon} />
             </div>
-            <h4 class="text-white font-semibold text-sm mb-1">{title}</h4>
+            <!-- h3 correctly follows h2 in this section -->
+            <h3 class="text-white font-semibold text-sm mb-1">{title}</h3>
             <p class="text-gray-500 text-xs leading-relaxed">{desc}</p>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
 
     <!-- Right: Skills card ------------------------------------ -->
     <div class="reveal-right bg-card border border-border rounded-2xl p-8">
+      <!-- h3 correctly follows h2 -->
       <h3 class="text-white font-semibold text-lg mb-7">Skills</h3>
 
-      <div class="space-y-5" id="skillBars">
+      <ul class="space-y-5 list-none p-0" id="skillBars" role="list">
         {skills.map(({ name, pct }) => (
-          <div>
+          <li>
             <div class="flex justify-between text-sm mb-1.5">
-              <span class="text-gray-300 font-medium">{name}</span>
-              <span class="text-accent font-semibold">{pct}%</span>
+              <span class="text-gray-300 font-medium" id={`skill-${name.replace(/\s|\//g, '-').toLowerCase()}`}>
+                {name}
+              </span>
+              <span class="text-accent font-semibold" aria-hidden="true">{pct}%</span>
             </div>
-            <div class="h-1 bg-border rounded-full overflow-hidden">
+            <div
+              class="h-1 bg-border rounded-full overflow-hidden"
+              role="progressbar"
+              aria-valuenow={pct}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-labelledby={`skill-${name.replace(/\s|\//g, '-').toLowerCase()}`}
+              aria-label={`${name}: ${pct}%`}
+            >
               <div class="skill-bar-fill" data-pct={pct}></div>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
 
       <a
         href="#contact"
         class="btn-outline mt-8 w-full flex items-center justify-center gap-2 py-3.5 text-sm"
       >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path stroke-linecap="round" stroke-linejoin="round"
             d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
         </svg>
@@ -92,7 +105,6 @@ const pillars = [
 </section>
 
 <script>
-  // Animate skill bars when they scroll into view
   const skillSection = document.getElementById('skillBars');
   if (skillSection) {
     const observer = new IntersectionObserver(
