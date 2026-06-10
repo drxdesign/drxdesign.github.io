@@ -2,18 +2,18 @@
 
 <br/>
 
-```
- ██████╗ ██████╗ ██╗  ██╗██████╗ ███████╗███████╗██╗ ██████╗ ███╗   ██╗
- ██╔══██╗██╔══██╗╚██╗██╔╝██╔══██╗██╔════╝██╔════╝██║██╔════╝ ████╗  ██║
- ██║  ██║██████╔╝ ╚███╔╝ ██║  ██║█████╗  ███████╗██║██║  ███╗██╔██╗ ██║
- ██║  ██║██╔══██╗ ██╔██╗ ██║  ██║██╔══╝  ╚════██║██║██║   ██║██║╚██╗██║
- ██████╔╝██║  ██║██╔╝ ██╗██████╔╝███████╗███████║██║╚██████╔╝██║ ╚████║
- ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-```
+                            ```
+                            ██████╗ ██████╗ ██╗  ██╗██████╗ ███████╗███████╗██╗ ██████╗ ███╗   ██╗
+                            ██╔══██╗██╔══██╗╚██╗██╔╝██╔══██╗██╔════╝██╔════╝██║██╔════╝ ████╗  ██║
+                            ██║  ██║██████╔╝ ╚███╔╝ ██║  ██║█████╗  ███████╗██║██║  ███╗██╔██╗ ██║
+                            ██║  ██║██╔══██╗ ██╔██╗ ██║  ██║██╔══╝  ╚════██║██║██║   ██║██║╚██╗██║
+                            ██████╔╝██║  ██║██╔╝ ██╗██████╔╝███████╗███████║██║╚██████╔╝██║ ╚████║
+                            ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+                            ```
 
 ### `< Personal Portfolio />`
 
-*Crafted with precision · Animated with intent · Built to impress*
+_Crafted with precision · Animated with intent · Built to impress_
 
 <br/>
 
@@ -37,12 +37,12 @@
 
 <div align="center">
 
-| | Technology | Version | Role |
-|---|---|---|---|
-| <img src="https://astro.build/favicon.svg" width="20" /> | [**Astro.js**](https://astro.build) | `6.x` | Static site framework |
-| <img src="https://tailwindcss.com/favicons/favicon-32x32.png" width="20" /> | [**Tailwind CSS**](https://tailwindcss.com) | `4.x` | Utility-first styling |
-| <img src="https://gsap.com/favicon.ico" width="20" /> | **GSAP** | `3.x` | Scroll & motion |
-| <img src="https://pages.github.com/images/favicon.ico" width="20" /> | **GitHub Pages** | — | Hosting & deployment |
+|                                                                             | Technology                                  | Version | Role                  |
+| --------------------------------------------------------------------------- | ------------------------------------------- | ------- | --------------------- |
+| <img src="https://astro.build/favicon.svg" width="20" />                    | [**Astro.js**](https://astro.build)         | `6.x`   | Static site framework |
+| <img src="https://tailwindcss.com/favicons/favicon-32x32.png" width="20" /> | [**Tailwind CSS**](https://tailwindcss.com) | `4.x`   | Utility-first styling |
+| <img src="https://gsap.com/favicon.ico" width="20" />                       | **GSAP**                                    | `3.x`   | Scroll & motion       |
+| <img src="https://pages.github.com/images/favicon.ico" width="20" />        | **GitHub Pages**                            | —       | Hosting & deployment  |
 
 </div>
 
@@ -138,16 +138,16 @@ drxdesign.github.io/
 
 ## 🎨 Customisation
 
-| What | Where | How |
-|---|---|---|
-| Name & tagline | `src/components/Hero.astro` | Edit the `<h1>` and subtitle text |
-| Profile photo | `public/profile.jpg` | Replace the file, keep the same name |
-| Typing words | `src/components/Hero.astro` | Edit the `words` array in the `<script>` |
-| Skills & levels | `src/components/About.astro` | Edit the `skills` array |
-| Projects | `src/components/Work.astro` | Edit the `projects` array |
-| Social links | `src/components/SocialLinks.astro` | Edit the `links` array |
-| Contact info | `src/components/Contact.astro` | Edit the `contactInfo` array |
-| Brand colour | `src/styles/global.css` | Change `--color-accent: #9FE45A` in `@theme` |
+| What            | Where                              | How                                          |
+| --------------- | ---------------------------------- | -------------------------------------------- |
+| Name & tagline  | `src/components/Hero.astro`        | Edit the `<h1>` and subtitle text            |
+| Profile photo   | `public/profile.jpg`               | Replace the file, keep the same name         |
+| Typing words    | `src/components/Hero.astro`        | Edit the `words` array in the `<script>`     |
+| Skills & levels | `src/components/About.astro`       | Edit the `skills` array                      |
+| Projects        | `src/components/Work.astro`        | Edit the `projects` array                    |
+| Social links    | `src/components/SocialLinks.astro` | Edit the `links` array                       |
+| Contact info    | `src/components/Contact.astro`     | Edit the `contactInfo` array                 |
+| Brand colour    | `src/styles/global.css`            | Change `--color-accent: #9FE45A` in `@theme` |
 
 ---
 
@@ -169,6 +169,7 @@ const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
 > On first submission, Formspree will send a confirmation email — click it to activate delivery.
 
 **Alternatives:**
+
 - [EmailJS](https://emailjs.com) — client-side email, no backend needed
 - Custom API route at `src/pages/api/contact.ts`
 
@@ -201,7 +202,7 @@ MIT License — use it however you like.
 
 <br/>
 
-*Designed & built by* **DRX Design**
+_Designed & built by_ **DRX Design**
 
 [![Visit Site](https://img.shields.io/badge/Visit_Site-drxdesign.github.io-9FE45A?style=for-the-badge&logo=googlechrome&logoColor=black)](https://drxdesign.github.io)
 
