@@ -4,7 +4,7 @@
 
 @import "tailwindcss";
 
-@theme {
+:root {
   --color-accent: #9FE45A;
   --color-accent-light: #b4f070;
   --color-dark: #111111;
@@ -254,14 +254,15 @@
   }
 
   /* Annotation */
-  .annotation {
-    font-family: 'Caveat', cursive;
-    color: #9FE45A;
-    font-size: 1.25rem;
-    user-select: none;
-    pointer-events: none;
-    transform: rotate(-8deg);
-  }
+.annotation {
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  color: #9FE45A;
+  font-size: 1.25rem;
+  user-select: none;
+  pointer-events: none;
+  transform: rotate(-8deg);
+}
 
   /* Scroll reveal — initial hidden state */
   .reveal {
