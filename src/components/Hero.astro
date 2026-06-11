@@ -137,11 +137,7 @@ import SocialLinks from "./SocialLinks.astro";
           class="absolute inset-0 rounded-full overflow-hidden bg-accent flex items-end justify-center"
         >
           <!-- Replace the image  with your real photo: <img src="/profile.jpg" alt="Your name — Web Designer & Developer" class="w-full h-full object-cover object-top" /> -->
-          <img
-            src="/profile.jpg"
-            alt="Ziane Maamar — Web Designer & Developer"
-            class="w-full h-full object-cover object-top"
-          />
+<picture> <source srcset="/profile.webp" type="image/webp" /> <img src="/profile.jpg" alt="Ziane Maamar — Web Designer & Developer" width="288" height="288" class="w-full h-full object-cover object-top" loading="eager" fetchpriority="high" /> </picture>
         </div>
       </div>
 
