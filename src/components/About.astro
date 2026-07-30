@@ -10,96 +10,125 @@ const skills = [
 const pillars = [
   {
     title: 'Clean Code',
-    desc: 'I write scalable and maintainable code.',
+    desc: 'Scalable, readable, and maintainable — always.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
   },
   {
-    title: 'Modern Design',
-    desc: 'I design visually appealing and user-friendly interfaces.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>`,
+    title: 'Pixel Precision',
+    desc: 'Every detail crafted with intention and care.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>`,
   },
   {
     title: 'Performance',
-    desc: 'I build fast and optimized web experiences.',
+    desc: 'Fast, optimized, and smooth across all devices.',
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
   },
 ];
 ---
 
-<section id="about" aria-labelledby="about-heading" class="py-20 px-6 md:px-16">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-start">
+<section id="about" aria-labelledby="about-heading" class="py-24 px-6 md:px-8">
+  <div class="max-w-6xl mx-auto">
 
-    <!-- Left -------------------------------------------------- -->
-    <div>
-      <!-- Section label is decorative, the h2 is the real heading -->
-      <p class="reveal section-label mb-3" aria-hidden="true">About Me</p>
-
-      <h2 id="about-heading" class="reveal delay-100 text-3xl md:text-4xl font-bold leading-snug mb-5">
-        I'm a passionate developer who loves
-        <span class="text-accent">clean design</span> and
-        <span class="text-accent">efficient code.</span>
-      </h2>
-
-      <p class="reveal delay-200 text-gray-400 text-sm leading-relaxed mb-10 max-w-sm">
-        With a strong eye for design and a love for development, I create websites
-        that are not only beautiful but also fast, responsive and user-friendly.
-      </p>
-
-      <!-- Pillars -->
-      <ul class="reveal delay-300 grid grid-cols-3 gap-5 list-none p-0" role="list">
-        {pillars.map(({ title, desc, icon }) => (
-          <li>
-            <div class="text-accent mb-2" aria-hidden="true">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                aria-hidden="true" focusable="false" set:html={icon} />
-            </div>
-            <!-- h3 correctly follows h2 in this section -->
-            <h3 class="text-white font-semibold text-sm mb-1">{title}</h3>
-            <p class="text-gray-500 text-xs leading-relaxed">{desc}</p>
-          </li>
-        ))}
-      </ul>
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-16 reveal">
+      <span class="section-label">About Me</span>
+      <div class="flex-1 h-px bg-gradient-to-r from-[#1A1A1A] to-transparent" aria-hidden="true"></div>
+      <span class="num-label">01</span>
     </div>
 
-    <!-- Right: Skills card ------------------------------------ -->
-    <div class="reveal-right bg-card border border-border rounded-2xl p-8">
-      <!-- h3 correctly follows h2 -->
-      <h3 class="text-white font-semibold text-lg mb-7">Skills</h3>
+    <div class="grid md:grid-cols-5 gap-10 md:gap-16 items-start">
 
-      <ul class="space-y-5 list-none p-0" id="skillBars" role="list">
-        {skills.map(({ name, pct }) => (
-          <li>
-            <div class="flex justify-between text-sm mb-1.5">
-              <span class="text-gray-300 font-medium" id={`skill-${name.replace(/\s|\//g, '-').toLowerCase()}`}>
-                {name}
-              </span>
-              <span class="text-accent font-semibold" aria-hidden="true">{pct}%</span>
-            </div>
-            <div
-              class="h-1 bg-border rounded-full overflow-hidden"
-              role="progressbar"
-              aria-valuenow={pct}
-              aria-valuemin={0}
-              aria-valuemax={100}
-              aria-labelledby={`skill-${name.replace(/\s|\//g, '-').toLowerCase()}`}
-              aria-label={`${name}: ${pct}%`}
-            >
-              <div class="skill-bar-fill" data-pct={pct}></div>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <!-- Left — 3 cols on desktop -->
+      <div class="md:col-span-3">
+        <h2 id="about-heading" class="reveal delay-100 font-bold leading-[1.1] tracking-tight mb-8"
+            style="font-size: clamp(1.8rem, 4vw, 3rem);">
+          Passionate developer who loves
+          <span class="text-accent">clean design</span>
+          and
+          <span class="text-accent">efficient code.</span>
+        </h2>
 
-      <a
-        href="#contact"
-        class="btn-outline mt-8 w-full flex items-center justify-center gap-2 py-3.5 text-sm"
-      >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-        </svg>
-        More About Me
-      </a>
+        <div class="reveal delay-200 space-y-4 text-[#A0A0A0] text-sm leading-relaxed mb-12 max-w-lg">
+          <p>
+            With a strong eye for design and a deep love for development, I create
+            websites that are not only beautiful but also blazing fast, accessible,
+            and easy to maintain.
+          </p>
+          <p>
+            I work at the intersection of design and engineering — bringing ideas to
+            life with clean code and thoughtful interfaces. Every project is an
+            opportunity to craft something that both looks great and works perfectly.
+          </p>
+        </div>
+
+        <!-- Approach pillars -->
+        <ul class="reveal delay-300 grid grid-cols-1 sm:grid-cols-3 gap-4 list-none p-0" role="list">
+          {pillars.map(({ title, desc, icon }) => (
+            <li class="group p-5 rounded-2xl border border-[#1A1A1A] bg-[#0F0F0F] hover:border-accent/20 hover:bg-[#121212] transition-all duration-200">
+              <div class="w-9 h-9 rounded-xl bg-accent/8 flex items-center justify-center text-accent mb-4 group-hover:bg-accent/12 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                  aria-hidden="true" focusable="false" set:html={icon} />
+              </div>
+              <h3 class="text-[#F2F2F2] font-semibold text-sm mb-1.5">{title}</h3>
+              <p class="text-[#5A5A5A] text-xs leading-relaxed">{desc}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Right — 2 cols — Skills -->
+      <div class="md:col-span-2 reveal-right">
+        <div class="rounded-2xl border border-[#1A1A1A] bg-[#0F0F0F] overflow-hidden">
+
+          <!-- Card header -->
+          <div class="px-6 py-5 border-b border-[#1A1A1A] flex items-center justify-between">
+            <h3 class="text-[#F2F2F2] font-semibold text-sm">Skills</h3>
+            <div class="flex gap-1.5" aria-hidden="true">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <ul class="space-y-6 list-none p-0" id="skillBars" role="list">
+              {skills.map(({ name, pct }) => (
+                <li>
+                  <div class="flex justify-between items-baseline mb-2">
+                    <span class="text-[#A0A0A0] text-sm font-medium" id={`skill-${name.replace(/[\s/]+/g,'-').toLowerCase()}`}>
+                      {name}
+                    </span>
+                    <span class="text-accent text-xs font-mono font-bold" aria-hidden="true">{pct}%</span>
+                  </div>
+                  <div
+                    class="skill-bar-track"
+                    role="progressbar"
+                    aria-valuenow={pct}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-labelledby={`skill-${name.replace(/[\s/]+/g,'-').toLowerCase()}`}
+                    aria-label={`${name}: ${pct}%`}
+                  >
+                    <div class="skill-bar-fill" data-pct={pct}></div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-8 pt-6 border-t border-[#1A1A1A]">
+              <a
+                href="#contact"
+                class="btn-ghost w-full justify-center py-2 text-sm font-medium"
+              >
+                Work with me
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -107,19 +136,16 @@ const pillars = [
 <script>
   const skillSection = document.getElementById('skillBars');
   if (skillSection) {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            document.querySelectorAll<HTMLElement>('.skill-bar-fill').forEach(bar => {
-              bar.style.width = `${bar.dataset.pct}%`;
-            });
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll<HTMLElement>('.skill-bar-fill').forEach(bar => {
+            bar.style.width = `${bar.dataset.pct}%`;
+          });
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
     observer.observe(skillSection);
   }
 </script>

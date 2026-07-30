@@ -1,18 +1,36 @@
 ---
-import SocialLinks from "./SocialLinks.astro";
+import SocialLinks from './SocialLinks.astro';
 ---
 
-<footer
-  class="border-t border-border py-6 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-4"
->
-  <a
-    href="#hero"
-    class="text-white font-bold text-lg tracking-tight select-none"
-  >
-    &lt; DRXDESIGN <span class="logo-cursor">/</span>&gt;
-  </a>
-  <p class="text-gray-500 text-sm">
-    &copy; {new Date().getFullYear()} Ziane Maamar. All rights reserved.
-  </p>
-  <SocialLinks />
+<footer class="border-t border-[#131313] py-10 px-6 md:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <!-- Left — logo + tagline -->
+      <div class="flex flex-col items-center md:items-start gap-1.5">
+        <a
+          href="#hero"
+          class="flex items-center gap-2 text-white font-bold text-sm tracking-tight select-none group"
+          aria-label="DRXDESIGN — back to top"
+        >
+          <span class="w-6 h-6 rounded-md bg-accent flex items-center justify-center flex-shrink-0 transition-transform group-hover:rotate-6 duration-300">
+            <svg class="w-3 h-3" fill="none" stroke="#0C0C0C" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </span>
+          drxdesign
+        </a>
+        <p class="text-[#3A3A3A] text-xs">Designed & built with care.</p>
+      </div>
+
+      <!-- Center — copyright -->
+      <p class="text-[#3A3A3A] text-xs order-last md:order-none">
+        &copy; {new Date().getFullYear()} Ziane Maamar. All rights reserved.
+      </p>
+
+      <!-- Right — social -->
+      <SocialLinks />
+
+    </div>
+  </div>
 </footer>

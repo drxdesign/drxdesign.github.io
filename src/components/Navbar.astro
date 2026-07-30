@@ -7,150 +7,172 @@ const navLinks = [
 ];
 ---
 
+<!-- Skip to content -->
+<a
+  href="#hero"
+  class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100]
+         focus:bg-accent focus:text-dark focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold focus:text-sm"
+>
+  Skip to main content
+</a>
+
 <header
   id="navbar"
-  class="fixed top-0 left-0 right-0 z-50 px-6 md:px-16 py-4
-         flex items-center justify-between transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
   role="banner"
 >
-  <!-- Logo -->
-  <a href="#hero" class="text-white font-bold text-lg tracking-tight select-none" aria-label="DRXDESIGN — go to top">
-    &lt; DRXDESIGN <span class="logo-cursor" aria-hidden="true">/</span>&gt;
-  </a>
+  <div class="max-w-6xl mx-auto px-6 md:px-8 py-5 flex items-center justify-between">
 
-  <!-- Desktop nav -->
-  <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="Primary navigation">
-    {navLinks.map(({ href, label }) => (
-      <a
-        href={href}
-        class={`nav-link ${href === '#hero' ? 'active' : ''}`}
-        data-section={href.slice(1)}
-        aria-current={href === '#hero' ? 'page' : undefined}
-      >
-        {label}
+    <!-- Logo -->
+    <a
+      href="#hero"
+      class="flex items-center gap-2 text-white font-bold text-sm tracking-tight select-none group"
+      aria-label="DRXDESIGN — back to top"
+    >
+      <span class="w-7 h-7 rounded-lg bg-accent flex items-center justify-center flex-shrink-0 transition-transform group-hover:rotate-6 duration-300">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="#0C0C0C" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+        </svg>
+      </span>
+      <span class="font-semibold text-[15px]">drxdesign</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-7" aria-label="Primary navigation">
+      {navLinks.map(({ href, label }) => (
+        <a
+          href={href}
+          class={`nav-link ${href === '#hero' ? 'active' : ''}`}
+          data-section={href.slice(1)}
+          aria-current={href === '#hero' ? 'page' : undefined}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Right side -->
+    <div class="hidden md:flex items-center gap-3">
+      <a href="/cv.pdf" download class="btn-outline px-4 py-2 text-[13px]">
+        Resume
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
       </a>
-    ))}
-  </nav>
+      <a href="#contact" class="btn-primary px-4 py-2 text-[13px]">
+        Let's Talk
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
 
-  <!-- CTA -->
-  <a
-    href="#contact"
-    class="hidden md:flex btn-primary items-center gap-2 px-5 py-2.5 text-sm"
-  >
-    Let's Talk
-    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-    </svg>
-  </a>
-
-  <!-- Mobile hamburger -->
-  <button
-    id="menuBtn"
-    class="md:hidden text-white p-1"
-    aria-label="Open navigation menu"
-    aria-expanded="false"
-    aria-controls="mobileMenu"
-  >
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-    </svg>
-  </button>
+    <!-- Mobile menu button -->
+    <button
+      id="menuBtn"
+      class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-[#1A1A1A] text-[#A0A0A0] hover:text-white hover:border-[#242424] transition-colors"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <svg id="menuIconOpen" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h10M4 18h16"/>
+      </svg>
+    </button>
+  </div>
 </header>
 
-<!-- Mobile menu overlay -->
+<!-- Mobile menu -->
 <div
   id="mobileMenu"
   role="dialog"
   aria-modal="true"
   aria-label="Navigation menu"
-  class="fixed inset-0 z-40 bg-dark/96 backdrop-blur-md
-         flex flex-col items-center justify-center gap-10
-         translate-x-full transition-transform duration-300 ease-in-out"
+  class="fixed inset-0 z-40 flex flex-col translate-x-full transition-transform duration-300 ease-in-out"
   aria-hidden="true"
   inert
 >
-  <!-- Close -->
-  <button
-    id="closeMenu"
-    class="absolute top-5 right-6 text-gray-400 hover:text-white transition-colors"
-    aria-label="Close navigation menu"
-  >
-    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-    </svg>
-  </button>
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-[#0C0C0C]/95 backdrop-blur-xl"></div>
 
-  <nav aria-label="Mobile navigation">
-    {navLinks.map(({ href, label }) => (
-      <a
-        href={href}
-        class="mobile-nav-link block text-3xl font-bold text-white hover:text-accent transition-colors duration-200 mb-6 text-center"
-      >
-        {label}
-      </a>
-    ))}
-  </nav>
+  <!-- Content -->
+  <div class="relative flex flex-col h-full px-6 pt-20 pb-10">
+    <!-- Close -->
+    <button
+      id="closeMenu"
+      class="absolute top-5 right-6 w-9 h-9 flex items-center justify-center rounded-lg border border-[#1A1A1A] text-[#A0A0A0] hover:text-white transition-colors"
+      aria-label="Close navigation menu"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
 
-  <a href="#contact" class="btn-primary px-8 py-3.5 text-base mt-2">
-    Let's Talk
-    <span aria-hidden="true"> →</span>
-  </a>
+    <nav class="flex flex-col gap-2" aria-label="Mobile navigation">
+      {navLinks.map(({ href, label }, i) => (
+        <a
+          href={href}
+          class="mobile-nav-link flex items-center justify-between px-4 py-4 rounded-xl border border-[#1A1A1A] text-xl font-semibold text-white hover:border-accent/30 hover:text-accent transition-all duration-200"
+          style={`transition-delay: ${i * 40}ms`}
+        >
+          {label}
+          <svg class="w-4 h-4 text-[#3A3A3A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      ))}
+    </nav>
+
+    <div class="mt-auto flex gap-3">
+      <a href="/cv.pdf" download class="btn-outline flex-1 justify-center py-3.5 text-sm">Download CV</a>
+      <a href="#contact" class="mobile-nav-link btn-primary flex-1 justify-center py-3.5 text-sm">Let's Talk</a>
+    </div>
+  </div>
 </div>
-
-<!-- Skip to main content link (screen readers / keyboard users) -->
-<a
-  href="#hero"
-  class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100]
-         focus:bg-accent focus:text-dark focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold"
->
-  Skip to main content
-</a>
 
 <script>
   const navbar    = document.getElementById('navbar')!;
-  const sections  = ['hero', 'about', 'work', 'contact'];
-  const navLinks  = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
-
-  // ---- Navbar scroll effect ----
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('navbar-scrolled', window.scrollY > 40);
-
-    let current = 'hero';
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && window.scrollY >= el.offsetTop - 130) current = id;
-    });
-
-    navLinks.forEach(link => {
-      const active = link.dataset.section === current;
-      link.classList.toggle('active', active);
-      link.classList.toggle('text-white', active);
-      link.classList.toggle('text-gray-400', !active);
-      // Keep aria-current in sync
-      if (active) {
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.removeAttribute('aria-current');
-      }
-    });
-  }, { passive: true });
-
-  // ---- Mobile menu ----
-  const menuBtn    = document.getElementById('menuBtn')!;
-  const closeBtn   = document.getElementById('closeMenu')!;
+  const menuBtn   = document.getElementById('menuBtn')!;
+  const closeBtn  = document.getElementById('closeMenu')!;
   const mobileMenu = document.getElementById('mobileMenu')!;
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  const navLinks  = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
+  const sections  = ['hero', 'about', 'work', 'contact'];
 
+  // Scroll effects
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        // Navbar style
+        navbar.classList.toggle('navbar-scrolled', window.scrollY > 50);
+
+        // Active section
+        let current = 'hero';
+        sections.forEach(id => {
+          const el = document.getElementById(id);
+          if (el && window.scrollY >= el.offsetTop - 140) current = id;
+        });
+        navLinks.forEach(link => {
+          const active = link.dataset.section === current;
+          link.classList.toggle('active', active);
+          active ? link.setAttribute('aria-current', 'page') : link.removeAttribute('aria-current');
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Mobile menu
   function openMenu() {
     mobileMenu.classList.remove('translate-x-full');
     mobileMenu.removeAttribute('aria-hidden');
     mobileMenu.removeAttribute('inert');
     menuBtn.setAttribute('aria-expanded', 'true');
     document.body.classList.add('menu-open');
-    // Move focus into menu for keyboard/screen reader users
-    closeBtn.focus();
+    setTimeout(() => closeBtn.focus(), 50);
   }
-
   function closeMenu() {
     mobileMenu.classList.add('translate-x-full');
     mobileMenu.setAttribute('aria-hidden', 'true');
@@ -163,11 +185,7 @@ const navLinks = [
   menuBtn.addEventListener('click', openMenu);
   closeBtn.addEventListener('click', closeMenu);
   mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
-      closeMenu();
-    }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') closeMenu();
   });
 </script>

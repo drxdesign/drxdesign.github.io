@@ -1,78 +1,97 @@
 ---
 const projects = [
   {
+    number: '01',
     title: 'Dashboard UI',
-    desc: 'A clean and modern dashboard design for analytics platform.',
+    desc: 'A clean and modern analytics dashboard designed for data-heavy platforms. Focused on readability and fast scanning.',
     tags: ['UI/UX', 'Figma'],
     href: '#',
+    year: '2024',
     mockup: 'dashboard',
   },
   {
+    number: '02',
     title: 'Digital Agency Website',
-    desc: 'Responsive website for a digital agency built with Astro.js.',
+    desc: 'A full responsive website for a digital agency built with Astro.js. Includes animations and custom CMS integration.',
     tags: ['Astro.js', 'Tailwind CSS'],
     href: '#',
+    year: '2024',
     mockup: 'agency',
   },
   {
+    number: '03',
     title: 'E-commerce Store',
-    desc: 'Minimal e-commerce store with smooth shopping experience.',
+    desc: 'A minimal, conversion-focused e-commerce store with a smooth shopping experience and product configurator.',
     tags: ['Astro.js', 'Tailwind CSS'],
     href: '#',
+    year: '2024',
     mockup: 'ecommerce',
   },
 ];
 ---
 
-<section id="work" aria-labelledby="work-heading" class="py-20 px-6 md:px-16">
+<section id="work" aria-labelledby="work-heading" class="py-24 px-6 md:px-8">
   <div class="max-w-6xl mx-auto">
 
-    <!-- Header -->
-    <div class="text-center mb-14">
-      <p class="reveal section-label mb-2" aria-hidden="true">My Work</p>
-      <h2 id="work-heading" class="reveal delay-100 text-3xl md:text-4xl font-bold">
-        Some of my recent work
-      </h2>
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-6 reveal">
+      <span class="section-label">My Work</span>
+      <div class="flex-1 h-px bg-gradient-to-r from-[#1A1A1A] to-transparent" aria-hidden="true"></div>
+      <span class="num-label">02</span>
     </div>
 
-    <!-- Projects grid — use ul/li for a list of items -->
-    <ul class="grid md:grid-cols-3 gap-6 list-none p-0" role="list">
-      {projects.map(({ title, desc, tags, href, mockup }, i) => (
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
+      <h2 id="work-heading" class="reveal delay-100 font-bold leading-tight"
+          style="font-size: clamp(1.8rem, 4vw, 3rem);">
+        Selected projects
+      </h2>
+      <a href="#" class="reveal delay-200 btn-ghost text-sm whitespace-nowrap">
+        View all work
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Projects -->
+    <ul class="grid md:grid-cols-3 gap-5 list-none p-0" role="list">
+      {projects.map(({ number, title, desc, tags, href, year, mockup }, i) => (
         <li class={`reveal delay-${(i + 1) * 100}`}>
           <a
             href={href}
-            class="project-card block"
+            class="project-card block group"
             aria-label={`${title} — ${desc}`}
           >
-            <!-- Mockup preview — decorative, hidden from AT -->
-            <div class="relative h-48 overflow-hidden" aria-hidden="true">
+            <!-- Preview -->
+            <div class="relative h-52 overflow-hidden" aria-hidden="true">
+
               {mockup === 'dashboard' && (
-                <div class="absolute inset-0 bg-[#181818] p-3 flex flex-col gap-2">
-                  <div class="flex gap-1.5 items-center mb-1">
-                    <div class="w-2 h-2 rounded-full bg-red-400/60"></div>
-                    <div class="w-2 h-2 rounded-full bg-yellow-400/60"></div>
-                    <div class="w-2 h-2 rounded-full bg-green-400/60"></div>
-                    <div class="flex-1 bg-white/10 rounded h-2.5 ml-2"></div>
+                <div class="absolute inset-0 bg-[#0F0F0F] p-4 flex flex-col gap-2.5">
+                  <!-- browser bar -->
+                  <div class="flex gap-1.5 items-center mb-0.5">
+                    <div class="w-2 h-2 rounded-full bg-red-400/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-yellow-400/50"></div>
+                    <div class="w-2 h-2 rounded-full bg-accent/50"></div>
+                    <div class="flex-1 bg-white/5 rounded h-2 ml-2"></div>
                   </div>
-                  <div class="flex gap-2 flex-1">
-                    <div class="w-16 bg-white/5 rounded-lg flex flex-col gap-1.5 p-1.5">
-                      <div class="h-2 bg-accent/40 rounded w-3/4"></div>
-                      <div class="h-1.5 bg-white/10 rounded"></div>
-                      <div class="h-1.5 bg-white/10 rounded w-2/3"></div>
-                      <div class="h-1.5 bg-accent/30 rounded mt-2"></div>
-                      <div class="h-1.5 bg-white/10 rounded"></div>
-                      <div class="h-1.5 bg-white/10 rounded w-1/2"></div>
+                  <div class="flex gap-2 flex-1 min-h-0">
+                    <!-- sidebar -->
+                    <div class="w-14 bg-white/3 rounded-xl flex flex-col gap-1.5 p-2">
+                      <div class="h-1.5 bg-accent/40 rounded w-3/4"></div>
+                      {[1,2,3,4].map(() => <div class="h-1.5 bg-white/8 rounded"></div>)}
                     </div>
-                    <div class="flex-1 flex flex-col gap-1.5">
-                      <div class="grid grid-cols-2 gap-1.5 h-14">
-                        <div class="bg-accent/20 rounded-lg p-1 flex items-center justify-center">
-                          <div class="w-6 h-6 rounded-full border-2 border-accent/70"></div>
+                    <!-- main -->
+                    <div class="flex-1 flex flex-col gap-2">
+                      <div class="grid grid-cols-3 gap-1.5 h-14">
+                        <div class="bg-accent/10 rounded-xl flex items-center justify-center col-span-1">
+                          <div class="w-7 h-7 rounded-full border-2 border-accent/50"></div>
                         </div>
-                        <div class="bg-white/5 rounded-lg"></div>
+                        <div class="bg-white/3 rounded-xl col-span-2"></div>
                       </div>
-                      <div class="flex-1 bg-white/5 rounded-lg p-1.5 flex items-end gap-1">
-                        {[40,70,55,85,50,65].map(h => (
-                          <div class="flex-1 bg-accent/60 rounded-sm" style={`height:${h}%`}></div>
+                      <!-- chart -->
+                      <div class="flex-1 bg-white/3 rounded-xl p-2 flex items-end gap-1">
+                        {[35,60,45,80,55,70,40,90].map(h => (
+                          <div class="flex-1 bg-accent/50 rounded-sm transition-all" style={`height:${h}%`}></div>
                         ))}
                       </div>
                     </div>
@@ -81,78 +100,94 @@ const projects = [
               )}
 
               {mockup === 'agency' && (
-                <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                  <div class="text-center px-6">
-                    <div class="text-accent font-mono text-xs mb-2 font-bold tracking-widest">&lt; DRXDESIGN /&gt;</div>
-                    <div class="text-white font-bold text-sm leading-tight">
-                      Grow your business<br/>with digital solutions
-                    </div>
-                    <div class="mt-4 mx-auto w-20 h-6 bg-accent rounded-lg flex items-center justify-center">
-                      <span class="text-dark text-[10px] font-bold">Get Started</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {mockup === 'ecommerce' && (
-                <div class="absolute inset-0 bg-gray-50 p-3">
-                  <div class="bg-white rounded-lg h-full p-3 shadow-sm flex gap-3">
-                    <div class="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-2">
-                      <svg viewBox="0 0 60 60" class="w-14 h-14" fill="none">
-                        <rect x="18" y="8" width="24" height="18" rx="3" fill="#333"/>
-                        <rect x="20" y="26" width="20" height="10" rx="2" fill="#555"/>
-                        <rect x="19" y="36" width="4" height="14" rx="1" fill="#444"/>
-                        <rect x="37" y="36" width="4" height="14" rx="1" fill="#444"/>
-                      </svg>
-                    </div>
-                    <div class="flex-1">
-                      <div class="text-[9px] text-gray-400 font-medium">Name</div>
-                      <div class="text-[12px] text-gray-800 font-bold mt-0.5">Modern Chair</div>
-                      <div class="text-[10px] text-gray-500 mt-0.5">$129.00</div>
-                      <div class="h-1.5 bg-gray-200 rounded mt-2"></div>
-                      <div class="h-1.5 bg-gray-200 rounded mt-1 w-3/4"></div>
-                      <div class="mt-3 w-full h-6 bg-gray-900 rounded flex items-center justify-center">
-                        <span class="text-white text-[9px] font-semibold">Add to cart</span>
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-[#0C0C0C]">
+                  <div class="absolute inset-0 grid-bg opacity-40"></div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center px-6">
+                      <div class="text-accent font-mono text-[10px] mb-3 font-bold tracking-[0.2em] uppercase">
+                        &lt; drxdesign /&gt;
+                      </div>
+                      <div class="text-white font-bold text-base leading-tight mb-4">
+                        Grow your business<br/>with digital solutions
+                      </div>
+                      <div class="mx-auto w-24 h-7 bg-accent rounded-lg flex items-center justify-center">
+                        <span class="text-dark text-[10px] font-bold">Get Started →</span>
                       </div>
                     </div>
                   </div>
                 </div>
               )}
 
-              <div class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-80"></div>
+              {mockup === 'ecommerce' && (
+                <div class="absolute inset-0 bg-[#F8F8F6] p-3">
+                  <div class="bg-white rounded-xl h-full shadow-sm flex gap-3 p-3">
+                    <div class="w-[72px] h-[72px] bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0 self-start mt-1">
+                      <svg viewBox="0 0 60 60" class="w-12 h-12" fill="none" aria-hidden="true">
+                        <rect x="18" y="8" width="24" height="18" rx="3" fill="#2a2a2a"/>
+                        <rect x="20" y="26" width="20" height="10" rx="2" fill="#444"/>
+                        <rect x="19" y="36" width="4" height="14" rx="1" fill="#333"/>
+                        <rect x="37" y="36" width="4" height="14" rx="1" fill="#333"/>
+                      </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="text-[8px] text-gray-400 font-medium uppercase tracking-wide">Category</div>
+                      <div class="text-[13px] text-gray-900 font-bold mt-0.5 leading-tight">Modern Chair</div>
+                      <div class="text-[11px] text-gray-500 mt-0.5 font-medium">$129.00</div>
+                      <div class="mt-2 space-y-1">
+                        <div class="h-1.5 bg-gray-100 rounded w-full"></div>
+                        <div class="h-1.5 bg-gray-100 rounded w-4/5"></div>
+                      </div>
+                      <div class="mt-3 flex gap-1.5">
+                        <div class="flex-1 h-7 bg-gray-900 rounded-lg flex items-center justify-center">
+                          <span class="text-white text-[9px] font-semibold">Add to cart</span>
+                        </div>
+                        <div class="w-7 h-7 border border-gray-200 rounded-lg flex items-center justify-center">
+                          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <!-- Overlay gradient -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent opacity-90"></div>
+
+              <!-- Number badge -->
+              <div class="absolute top-3 left-3">
+                <span class="num-label bg-[#0C0C0C]/80 backdrop-blur-sm px-2 py-1 rounded-md border border-[#1A1A1A]">
+                  {number}
+                </span>
+              </div>
+
+              <!-- Year badge -->
+              <div class="absolute top-3 right-3">
+                <span class="text-[10px] text-[#5A5A5A] bg-[#0C0C0C]/80 backdrop-blur-sm px-2 py-1 rounded-md border border-[#1A1A1A]">
+                  {year}
+                </span>
+              </div>
             </div>
 
             <!-- Card body -->
             <div class="p-5">
-              <!-- h3 correctly follows the section h2 -->
-              <h3 class="text-white font-semibold text-base mb-1.5">{title}</h3>
-              <p class="text-gray-500 text-xs mb-4 leading-relaxed">{desc}</p>
-              <div class="flex items-center justify-between">
-                <ul class="flex gap-2 flex-wrap list-none p-0" role="list" aria-label="Technologies used">
-                  {tags.map(tag => (
-                    <li><span class="tag-chip">{tag}</span></li>
-                  ))}
-                </ul>
-                <span class="card-arrow" aria-hidden="true">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" focusable="false">
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <h3 class="text-[#F2F2F2] font-semibold text-base leading-tight">{title}</h3>
+                <span class="card-arrow flex-shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                   </svg>
                 </span>
               </div>
+              <p class="text-[#5A5A5A] text-xs leading-relaxed mb-4">{desc}</p>
+              <ul class="flex gap-1.5 flex-wrap list-none p-0" role="list" aria-label="Technologies">
+                {tags.map(tag => (
+                  <li><span class="tag-chip">{tag}</span></li>
+                ))}
+              </ul>
             </div>
           </a>
         </li>
       ))}
     </ul>
-
-    <!-- View all CTA -->
-    <div class="reveal text-center mt-12">
-      <a href="#" class="btn-outline inline-flex items-center gap-2 px-8 py-3.5 text-sm">
-        View All Projects
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </a>
-    </div>
   </div>
 </section>
