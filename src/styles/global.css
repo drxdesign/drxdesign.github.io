@@ -388,7 +388,6 @@
     animation: pulseGlow 4s ease-in-out infinite;
   }
 
-<<<<<<< HEAD
   /* ---- Annotation ---- */
   .annotation {
     font-family: 'Caveat', cursive;
@@ -400,18 +399,6 @@
     transform: rotate(-6deg);
     opacity: 0.9;
   }
-=======
-  /* Annotation */
-.annotation {
-  font-family: 'Caveat', cursive;
-  font-weight: 600;
-  color: #9FE45A;
-  font-size: 1.25rem;
-  user-select: none;
-  pointer-events: none;
-  transform: rotate(-8deg);
-}
->>>>>>> 3168d615d1cf8b368f8c81011997df59a59de737
 
   /* ---- Scroll reveal ---- */
   .reveal {
